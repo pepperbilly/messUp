@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -28,18 +29,18 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="svF-J9-q87"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lsx-HP-kg0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lsx-HP-kg0">
                                 <rect key="frame" x="20" y="20" width="257" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vex-Jh-APz">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vex-Jh-APz">
                                 <rect key="frame" x="285" y="24" width="22" height="22"/>
                                 <connections>
                                     <action selector="meineEingabeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M18-8b-aRh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lk-ro-Mb5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lk-ro-Mb5">
                                 <rect key="frame" x="143" y="530" width="35" height="30"/>
                                 <state key="normal" title="reset"/>
                                 <connections>
@@ -49,11 +50,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="VvA-0P-aPi" secondAttribute="trailing" id="Dgc-vG-BQV"/>
-                            <constraint firstItem="VvA-0P-aPi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Tgc-ii-klO"/>
+                            <constraint firstAttribute="trailing" secondItem="VvA-0P-aPi" secondAttribute="trailing" id="6ST-4l-bRd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vex-Jh-APz" secondAttribute="trailing" id="6Uu-ND-sPs"/>
+                            <constraint firstItem="5lk-ro-Mb5" firstAttribute="centerX" secondItem="VvA-0P-aPi" secondAttribute="centerX" id="AeR-wg-YJJ"/>
+                            <constraint firstItem="VvA-0P-aPi" firstAttribute="top" secondItem="Lsx-HP-kg0" secondAttribute="bottom" constant="20" id="HMS-rf-Cr5"/>
+                            <constraint firstItem="VvA-0P-aPi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="URI-aO-ufe"/>
+                            <constraint firstItem="Lsx-HP-kg0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Unu-Be-dZg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5lk-ro-Mb5" secondAttribute="bottom" constant="8" id="Zar-dF-XRv"/>
+                            <constraint firstItem="5lk-ro-Mb5" firstAttribute="top" secondItem="VvA-0P-aPi" secondAttribute="bottom" constant="20" id="jSE-ZK-khn"/>
+                            <constraint firstItem="Vex-Jh-APz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="4" id="ju6-6e-yq5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5lk-ro-Mb5" secondAttribute="bottom" constant="8" id="nPh-Ew-YiS"/>
-                            <constraint firstItem="5lk-ro-Mb5" firstAttribute="top" secondItem="VvA-0P-aPi" secondAttribute="bottom" constant="8" id="wIT-Ec-Tks"/>
+                            <constraint firstItem="Vex-Jh-APz" firstAttribute="leading" secondItem="Lsx-HP-kg0" secondAttribute="trailing" constant="20" id="smd-w8-n7o"/>
                         </constraints>
                     </view>
                     <connections>
