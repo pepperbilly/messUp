@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="messUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VvA-0P-aPi">
+                                <rect key="frame" x="0.0" y="67" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.88458806820000002" green="0.88458806820000002" blue="0.88458806820000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Hca-lt-VdX"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="svF-J9-q87"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lsx-HP-kg0">
+                                <rect key="frame" x="20" y="20" width="257" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vex-Jh-APz">
+                                <rect key="frame" x="285" y="24" width="22" height="22"/>
+                                <connections>
+                                    <action selector="meineEingabeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M18-8b-aRh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lk-ro-Mb5">
+                                <rect key="frame" x="143" y="530" width="35" height="30"/>
+                                <state key="normal" title="reset"/>
+                                <connections>
+                                    <action selector="meineResetAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tam-sm-oqs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VvA-0P-aPi" secondAttribute="trailing" id="Dgc-vG-BQV"/>
+                            <constraint firstItem="VvA-0P-aPi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Tgc-ii-klO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5lk-ro-Mb5" secondAttribute="bottom" constant="8" id="Zar-dF-XRv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5lk-ro-Mb5" secondAttribute="bottom" constant="8" id="nPh-Ew-YiS"/>
+                            <constraint firstItem="5lk-ro-Mb5" firstAttribute="top" secondItem="VvA-0P-aPi" secondAttribute="bottom" constant="8" id="wIT-Ec-Tks"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="meinEingabeFeld" destination="Lsx-HP-kg0" id="ldr-sN-UH8"/>
+                        <outlet property="tableView" destination="VvA-0P-aPi" id="XjK-ph-JDy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="406"/>
+        </scene>
+    </scenes>
+</document>
