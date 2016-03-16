@@ -5,7 +5,33 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add View Controller-->
+        <scene sceneID="Yg6-xY-LMb">
+            <objects>
+                <viewController id="vXp-7e-f97" customClass="AddViewController" customModule="messUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XgP-1M-MZm"/>
+                        <viewControllerLayoutGuide type="bottom" id="tp0-VN-gdP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zY3-tZ-af0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hinzufügen" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucJ-AK-YXR">
+                                <rect key="frame" x="112" y="269" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Iwb-FW-pPG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P9V-ew-usG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1214" y="-287"/>
+        </scene>
+        <!--Liste-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="messUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +75,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wFH-99-wuB"/>
+                    <navigationItem key="navigationItem" title="Liste" id="klE-IO-rZi">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="fs2-fo-eUM">
+                            <connections>
+                                <segue destination="vXp-7e-f97" kind="push" identifier="-" id="gIl-f2-X9J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="meinEingabeFeld" destination="Lsx-HP-kg0" id="ldr-sN-UH8"/>
                         <outlet property="tableView" destination="VvA-0P-aPi" id="XjK-ph-JDy"/>
@@ -58,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="649" y="368"/>
+            <point key="canvasLocation" x="718" y="406"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="cHO-Tf-LY0">
@@ -71,6 +103,13 @@
                     <view key="view" contentMode="scaleToFill" id="KbR-vM-UoU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Detail" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nms-wW-VoY">
+                                <rect key="frame" x="112" y="269" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="i9X-lZ-UgF"/>

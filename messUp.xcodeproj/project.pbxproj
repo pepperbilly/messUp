@@ -15,6 +15,7 @@
 		3273770A1C98CAE100AB857D /* messUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327377091C98CAE100AB857D /* messUpTests.swift */; };
 		327377151C98CAE100AB857D /* messUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327377141C98CAE100AB857D /* messUpUITests.swift */; };
 		32BCE9AF1C9A1A0B0087D719 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCE9AE1C9A1A0B0087D719 /* DetailViewController.swift */; };
+		32BCE9B11C9A1F2C0087D719 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCE9B01C9A1F2C0087D719 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		327377141C98CAE100AB857D /* messUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messUpUITests.swift; sourceTree = "<group>"; };
 		327377161C98CAE100AB857D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32BCE9AE1C9A1A0B0087D719 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		32BCE9B01C9A1F2C0087D719 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				327376F41C98CAE100AB857D /* AppDelegate.swift */,
 				327376F61C98CAE100AB857D /* ViewController.swift */,
 				327376F81C98CAE100AB857D /* Main.storyboard */,
+				32BCE9B01C9A1F2C0087D719 /* AddViewController.swift */,
 				32BCE9AE1C9A1A0B0087D719 /* DetailViewController.swift */,
 				327376FB1C98CAE100AB857D /* Assets.xcassets */,
 				327376FD1C98CAE100AB857D /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				32BCE9AF1C9A1A0B0087D719 /* DetailViewController.swift in Sources */,
 				327376F71C98CAE100AB857D /* ViewController.swift in Sources */,
+				32BCE9B11C9A1F2C0087D719 /* AddViewController.swift in Sources */,
 				327376F51C98CAE100AB857D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
