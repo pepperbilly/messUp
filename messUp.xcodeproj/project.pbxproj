@@ -16,6 +16,7 @@
 		327377151C98CAE100AB857D /* messUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327377141C98CAE100AB857D /* messUpUITests.swift */; };
 		32BCE9AF1C9A1A0B0087D719 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCE9AE1C9A1A0B0087D719 /* DetailViewController.swift */; };
 		32BCE9B11C9A1F2C0087D719 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCE9B01C9A1F2C0087D719 /* AddViewController.swift */; };
+		B769AAEC1C9C244500A67FB8 /* connectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B769AAEB1C9C244500A67FB8 /* connectionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		327377161C98CAE100AB857D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32BCE9AE1C9A1A0B0087D719 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		32BCE9B01C9A1F2C0087D719 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		B769AAEB1C9C244500A67FB8 /* connectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = connectionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				327376FB1C98CAE100AB857D /* Assets.xcassets */,
 				327376FD1C98CAE100AB857D /* LaunchScreen.storyboard */,
 				327377001C98CAE100AB857D /* Info.plist */,
+				B769AAEB1C9C244500A67FB8 /* connectionModel.swift */,
 			);
 			path = messUp;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				32BCE9AF1C9A1A0B0087D719 /* DetailViewController.swift in Sources */,
 				327376F71C98CAE100AB857D /* ViewController.swift in Sources */,
+				B769AAEC1C9C244500A67FB8 /* connectionModel.swift in Sources */,
 				32BCE9B11C9A1F2C0087D719 /* AddViewController.swift in Sources */,
 				327376F51C98CAE100AB857D /* AppDelegate.swift in Sources */,
 			);

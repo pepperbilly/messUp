@@ -8,71 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSURLConnectionDelegate, NSURLSessionDelegate, NSURLSessionDataDelegate  {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ConnectionModelProtocal {
     
+    func itemsDownloaded(items: NSArray){
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+        }
+    }
     
     @IBOutlet weak var meinEingabeFeld: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    var items = [String]()
-    let urlPath: String = "http://localhost:8888/appTest/"
-    var data : NSMutableData = NSMutableData()
-    
-    func parseJSON() {
-        
-        var jsonResult: NSMutableArray = NSMutableArray()
-        do{
-            jsonResult = try NSJSONSerialization.JSONObjectWithData(self.data, options:NSJSONReadingOptions.AllowFragments) as! NSMutableArray
-            
-        } catch let error as NSError {
-            print(error)
-            
-        }
-        //////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////
-        var jsonElement: NSDictionary = NSDictionary()
-        for(var i = 0; i < jsonResult.count; i++)
-        {
-            jsonElement = jsonResult[i] as! NSDictionary
-            if let name = jsonElement["Name"] as? String{ self.items.append(name) }
-            
-        }
-        //////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////
-        dispatch_async(dispatch_get_main_queue()) {
-           self.tableView.reloadData()
-        }
-        
-      
-    }
+    let connectionModel = ConnectionModel()
 
     
-   
-    func downloadItems() {
-        let url: NSURL = NSURL(string: urlPath)!
-        var session: NSURLSession!
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        session = NSURLSession(configuration: configuration, delegate: self, delegateQueue: nil)
-        let task = session.dataTaskWithURL(url)
-        task.resume()
-        
-        
-    }
-    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
-        self.data.appendData(data);
-        
-    }
-    
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
-        if error != nil {
-            print("Failed to download data")
-        }else {
-            print("Data downloaded")
-              self.parseJSON()
-            
-        }
-        
-    }
-
     
     func schwips(schnaps: String)  {
        print(schnaps)
@@ -80,7 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         override func viewDidLoad() {
         
         self.schwips("vodka")
-        self.downloadItems()
+        //connectionModel.downloadItems()
         
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -88,6 +37,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.separatorInset = UIEdgeInsetsZero
         self.tableView.preservesSuperviewLayoutMargins = false
         self.tableView.layoutMargins = UIEdgeInsetsZero
+            
+            connectionModel.delegate = self
+            connectionModel.downloadItems()
             
         
 
@@ -101,13 +53,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count;
+        return connectionModel.items.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
-        cell.textLabel?.text = self.items[indexPath.row]
+        cell.textLabel?.text = connectionModel.items[indexPath.row]
         //abstände Links Raus
         cell.separatorInset = UIEdgeInsetsZero
         cell.preservesSuperviewLayoutMargins = false
@@ -128,13 +80,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBAction func meineResetAction(sender: AnyObject) {
-        items = []
+        connectionModel.items = []
         self.tableView.reloadData()
     
     }
 
     @IBAction func meineEingabeAction(sender: AnyObject) {
-        self.downloadItems()
+        connectionModel.downloadItems()
         meinEingabeFeld.resignFirstResponder()
         
         if(meinEingabeFeld.text! == "")
@@ -142,7 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print("leeer")
         }else{
         
-            items += [meinEingabeFeld.text!]
+            connectionModel.items += [meinEingabeFeld.text!]
             self.tableView.reloadData()
             meinEingabeFeld.text = String("")
            
