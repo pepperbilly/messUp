@@ -20,7 +20,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var meinEingabeFeld: UITextField!
     @IBOutlet weak var tableView: UITableView!
     let connectionModel = ConnectionModel()
-
+    var detailName:String!
+    var detailAddress:String!
     
     
     func schwips(schnaps: String)  {
@@ -52,6 +53,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
 
     
+    //////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return connectionModel.items.count;
     }
@@ -60,6 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
         cell.textLabel?.text = connectionModel.items[indexPath.row]
+        
         //abstände Links Raus
         cell.separatorInset = UIEdgeInsetsZero
         cell.preservesSuperviewLayoutMargins = false
@@ -69,14 +73,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-                self.performSegueWithIdentifier("detailSegue", sender: self)
+        
+        self.detailName = String(connectionModel.items[indexPath.row])
+        self.detailAddress = String(connectionModel.itemsAddress[indexPath.row])
+       // print(detailName)
+        self.performSegueWithIdentifier("detailSegue", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-       
+      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "detailSegue") {
+            var svc = segue.destinationViewController as! DetailViewController;
+            svc.dataPassed = self.detailName
+            svc.dataPassedAddress = self.detailAddress
+            //svc.secondDataPassed = fieldB.text
+        }
     }
     
+    //////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////
     
+
     
     
     @IBAction func meineResetAction(sender: AnyObject) {

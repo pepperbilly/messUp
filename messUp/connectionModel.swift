@@ -17,6 +17,7 @@ class ConnectionModel: NSObject,  NSURLConnectionDelegate, NSURLSessionDelegate,
 
 weak var delegate: ConnectionModelProtocal!
 var items = [String]()
+var itemsAddress = [String]()
 let urlPath: String = "http://localhost:8888/appTest/"
 var data : NSMutableData = NSMutableData()
 
@@ -37,6 +38,7 @@ func parseJSON() {
     {
         jsonElement = jsonResult[i] as! NSDictionary
         if let name = jsonElement["Name"] as? String{ self.items.append(name) }
+        if let address = jsonElement["Address"] as? String{ self.itemsAddress.append(address) }
         
     }
     //////////////////////////////////////////////////////////
